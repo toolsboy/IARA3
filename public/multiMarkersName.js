@@ -35,8 +35,6 @@ AFRAME.registerComponent('markers_start',{
 				model.setAttribute('gltf-model', {src: 'burger.glb'});
 				console.log("am trecut de incarcarea modelului");
 			}
-			model.object3D.position.set(0, 0.7, 0);
-			model.object3D.rotation.set(-90, 0, 0);
 
 			markerEl.appendChild(model);
 			//pana aici
