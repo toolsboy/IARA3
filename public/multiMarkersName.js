@@ -27,6 +27,9 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
 
+			var assetEl = document.createElement('a-assets');
+			markerEl.appendChild(assetEl);
+			var assetItemList = document.querySelector('a-assets');
 			//adaugat de mine
 			var model = document.createElement('a-asset-item');
 			if(k == 0)
@@ -35,8 +38,8 @@ AFRAME.registerComponent('markers_start',{
 				model.setAttribute('gltf-model', {src: 'burger.glb'});
 				console.log("am trecut de incarcarea modelului");
 			}
-
-			markerEl.appendChild(model);
+			assetItemList.appendChild(model);
+			
 			//pana aici
 
 			//decomenteaza si va aparea scris Marker_x
