@@ -37,14 +37,15 @@ AFRAME.registerComponent('markers_start',{
 			if(k == 0)
 			{
 				console.log("inainte de incarcarea modelului");
-				model.setAttribute(k, {src: 'burger.glb'});
+				model.setAttribute(src, 'burger.glb');
 				console.log("am trecut de incarcarea modelului");
 			}
-			assetItemList.appendChild(model);
+			// assetItemList.appendChild(model);
 
-			var entity = document.createElement('a-entity');
-			entity.setAttribute('entity'+k,{ "gltf-model=": k});
-			sceneEl.appendChild(entity);
+			// var entity = document.createElement('a-entity');
+			// entity.setAttribute(gltf-model,);
+			// sceneEl.appendChild(entity);
+
 			//pana aici
 
 			//decomenteaza si va aparea scris Marker_x
