@@ -28,7 +28,7 @@ AFRAME.registerComponent('markers_start',{
 			sceneEl.appendChild(markerEl);
 
 			var assetEl = document.createElement('a-assets');
-			markerEl.appendChild(assetEl);
+			sceneEl.appendChild(assetEl);
 			var assetItemList = document.querySelector('a-assets');
 			//adaugat de mine
 			var model = document.createElement('a-asset-item');
