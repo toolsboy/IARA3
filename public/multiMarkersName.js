@@ -45,6 +45,7 @@ AFRAME.registerComponent('markers_start',{
 
 			var entity = document.createElement('a-entity');
 			entity.setAttribute(gltf-model, `#model${k}`);
+			console.log("entity set attribute");
 			sceneEl.appendChild(entity);
 
 			//pana aici
