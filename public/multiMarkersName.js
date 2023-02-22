@@ -27,16 +27,19 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
 
+			//adaugat de mine
 			var model = document.createElement('a-entity');
-			
 			if(k == 0)
 			{
-				model.setAttribute(id, {src: 'burger.glb'});
+				model.object3D. setAttribute('gltf-model', {src: 'burger.glb'});
 			}
 			model.object3D.position.set(0, 0.7, 0);
 			model.object3D.rotation.set(-90, 0, 0);
 
 			markerEl.appendChild(model);
+			//pana aici
+
+			//decomenteaza si va aparea scris Marker_x
 			// var textEl = document.createElement('a-entity');
 			
 			// textEl.setAttribute('id','text');
