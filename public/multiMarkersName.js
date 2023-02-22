@@ -38,7 +38,8 @@ AFRAME.registerComponent('markers_start',{
 			{
 				console.log("inainte de incarcarea modelului");
 				model.setAttribute('src', 'burger.glb');
-				model.setAttribute('id', `model${k}`)
+				model.setAttribute('id', `model${k}`);
+				model.setAttribute('timeout', '15000');
 				console.log("am trecut de incarcarea modelului");
 			}
 			assetItemList.appendChild(model);
