@@ -28,11 +28,11 @@ AFRAME.registerComponent('markers_start',{
 			sceneEl.appendChild(markerEl);
 
 			//adaugat de mine
-			var model = document.createElement('a-entity');
+			var model = document.createElement('a-asset-item');
 			if(k == 0)
 			{
 				console.log("inainte de incarcarea modelului");
-				model.setAttribute('gltf-model', {obj: 'burger.glb'});
+				model.setAttribute('gltf-model', {src: 'burger.glb'});
 				console.log("am trecut de incarcarea modelului");
 			}
 			model.object3D.position.set(0, 0.7, 0);
