@@ -38,13 +38,14 @@ AFRAME.registerComponent('markers_start',{
 			{
 				console.log("inainte de incarcarea modelului");
 				model.setAttribute(src, 'burger.glb');
+				model.setAttribute(id, `model${k}`)
 				console.log("am trecut de incarcarea modelului");
 			}
-			// assetItemList.appendChild(model);
+			assetItemList.appendChild(model);
 
-			// var entity = document.createElement('a-entity');
-			// entity.setAttribute(gltf-model,);
-			// sceneEl.appendChild(entity);
+			var entity = document.createElement('a-entity');
+			entity.setAttribute(gltf-model, `#model${k}`);
+			sceneEl.appendChild(entity);
 
 			//pana aici
 
