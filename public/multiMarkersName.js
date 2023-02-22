@@ -17,6 +17,9 @@ AFRAME.registerComponent('markers_start',{
 			//console.log(url);
 		}
 
+		var assetEl = document.createElement('a-assets');
+		sceneEl.appendChild(assetEl);
+
 		for(var k=0; k<=4; k++)
 		{
 			var markerEl = document.createElement('a-marker');
@@ -27,19 +30,21 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
 
-			var assetEl = document.createElement('a-assets');
-			sceneEl.appendChild(assetEl);
+			
 			var assetItemList = document.querySelector('a-assets');
 			//adaugat de mine
 			var model = document.createElement('a-asset-item');
 			if(k == 0)
 			{
 				console.log("inainte de incarcarea modelului");
-				model.setAttribute('gltf-model', {src: 'burger.glb'});
+				model.setAttribute(k, {src: 'burger.glb'});
 				console.log("am trecut de incarcarea modelului");
 			}
 			assetItemList.appendChild(model);
-			
+
+			var entity = document.createElement('a-entity');
+			entity.setAttribute('entity'+k,{ "gltf-model=": k});
+			sceneEl.appendChild(entity);
 			//pana aici
 
 			//decomenteaza si va aparea scris Marker_x
