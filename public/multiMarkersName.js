@@ -31,7 +31,7 @@ AFRAME.registerComponent('markers_start',{
 			var model = document.createElement('a-entity');
 			if(k == 0)
 			{
-				model.object3D. setAttribute('gltf-model', {src: 'burger.glb'});
+				model.object3D. setAttribute('gltf-model', {obj: 'burger.glb'});
 			}
 			model.object3D.position.set(0, 0.7, 0);
 			model.object3D.rotation.set(-90, 0, 0);
