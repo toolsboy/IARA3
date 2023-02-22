@@ -1,4 +1,3 @@
-//Global Variable
 var markersURLArray=[];
 var markersNameArray=[];
 
@@ -20,52 +19,71 @@ AFRAME.registerComponent('markers_start',{
 		var assetEl = document.createElement('a-assets');
 		sceneEl.appendChild(assetEl);
 
+		var assetItemList = document.querySelector('a-assets');
 		for(var k=0; k<=4; k++)
 		{
+			
+			//adaugat de mine
+			var model = document.createElement('a-asset-item');
+			model.setAttribute('id', `model${k}`);
+			model.setAttribute('position',"0 0 0");
+			model.setAttribute('timeout', '15000');
+			if(k == 0)
+			{
+				model.setAttribute('src', 'burger.glb');
+			}
+			if(k == 1)
+			{
+				model.setAttribute('src', 'chicken.glb');
+			}
+			if(k == 2)
+			{
+				model.setAttribute('src', 'fish.glb');
+			}
+			if(k == 3)
+			{
+				model.setAttribute('src', 'pizza.glb');
+			}
+			if(k == 4)
+			{
+				model.setAttribute('src', 'steak.glb');
+			}
+			assetItemList.appendChild(model);
+
 			var markerEl = document.createElement('a-marker');
 			markerEl.setAttribute('type','pattern');
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
 
 			markerEl.setAttribute('registerevents','');
-			sceneEl.appendChild(markerEl);
-
-			
-			var assetItemList = document.querySelector('a-assets');
-			//adaugat de mine
-			var model = document.createElement('a-asset-item');
-			if(k == 0)
-			{
-				console.log("inainte de incarcarea modelului");
-				model.setAttribute('src', 'burger.glb');
-				model.setAttribute('id', `model${k}`);
-				model.setAttribute('timeout', '15000');
-				console.log("am trecut de incarcarea modelului");
-			}
-			assetItemList.appendChild(model);
-
 			var entity = document.createElement('a-entity');
 			entity.setAttribute('gltf-model', `#model${k}`);
-			console.log("entity set attribute");
-			sceneEl.appendChild(entity);
-
-			//pana aici
-
-			//decomenteaza si va aparea scris Marker_x
-			// var textEl = document.createElement('a-entity');
-			
-			// textEl.setAttribute('id','text');
-			// textEl.setAttribute('text',{color: 'red', align: 'center', value:markersNameArray[k], width: '5.5'});
-			// textEl.object3D.position.set(0, 0.7, 0);
-			// textEl.object3D.rotation.set(-90, 0, 0);
-
-			// markerEl.appendChild(textEl);
+			if(k == 0)
+			{
+				entity.setAttribute('scale', '0.2 0.2 0.2');
+			}
+			if(k == 1)
+			{
+				entity.setAttribute('scale', '2 2 2');
+			}
+			if(k == 2)
+			{
+				entity.setAttribute('scale', '3 3 3');
+			}
+			if(k == 3)
+			{
+				entity.setAttribute('scale', '0.4 0.4 0.4');
+			}
+			if(k == 4)
+			{
+				entity.setAttribute('scale', '0.1 0.1 0.1');
+			}
+			markerEl.appendChild(entity);
+			sceneEl.appendChild(markerEl);
 		}
 	}
 });
 
-
-//Detect marker found and lost
 AFRAME.registerComponent('registerevents', {
 		init: function () {
 			const marker = this.el;
