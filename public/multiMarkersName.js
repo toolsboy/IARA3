@@ -60,15 +60,17 @@ AFRAME.registerComponent('markers_start',{
 			entity.setAttribute('gltf-model', `#model${k}`);
 			if(k == 0)
 			{
-				entity.setAttribute('scale', '0.2 0.2 0.2');
+				entity.setAttribute('scale', '0.1 0.1 0.1');
 			}
 			if(k == 1)
 			{
 				entity.setAttribute('scale', '2 2 2');
+				entity.setAttribute('rotation', '0 90 0');
 			}
 			if(k == 2)
 			{
-				entity.setAttribute('scale', '3 3 3');
+				entity.setAttribute('scale', '2 2 2');
+				entity.setAttribute('position', '-30 0 0');
 			}
 			if(k == 3)
 			{
