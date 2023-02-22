@@ -17,26 +17,35 @@ AFRAME.registerComponent('markers_start',{
 			//console.log(url);
 		}
 
-		// for(var k=0; k<=4; k++)
-		// {
-		// 	var markerEl = document.createElement('a-marker');
-		// 	markerEl.setAttribute('type','pattern');
-		// 	markerEl.setAttribute('url',markersURLArray[k]);
-		// 	markerEl.setAttribute('id',markersNameArray[k]);
+		for(var k=0; k<=4; k++)
+		{
+			var markerEl = document.createElement('a-marker');
+			markerEl.setAttribute('type','pattern');
+			markerEl.setAttribute('url',markersURLArray[k]);
+			markerEl.setAttribute('id',markersNameArray[k]);
 
-		// 	markerEl.setAttribute('registerevents','');
-		// 	sceneEl.appendChild(markerEl);
+			markerEl.setAttribute('registerevents','');
+			sceneEl.appendChild(markerEl);
 
-
-		// 	var textEl = document.createElement('a-entity');
+			var model = document.createElement('a-entity');
 			
-		// 	textEl.setAttribute('id','text');
-		// 	textEl.setAttribute('text',{color: 'red', align: 'center', value:markersNameArray[k], width: '5.5'});
-		// 	textEl.object3D.position.set(0, 0.7, 0);
-		// 	textEl.object3D.rotation.set(-90, 0, 0);
+			if(k == 0)
+			{
+				model.setAttribute(id, {src: 'burger.glb'});
+			}
+			model.object3D.position.set(0, 0.7, 0);
+			model.object3D.rotation.set(-90, 0, 0);
 
-		// 	markerEl.appendChild(textEl);
-		// }
+			markerEl.appendChild(model);
+			// var textEl = document.createElement('a-entity');
+			
+			// textEl.setAttribute('id','text');
+			// textEl.setAttribute('text',{color: 'red', align: 'center', value:markersNameArray[k], width: '5.5'});
+			// textEl.object3D.position.set(0, 0.7, 0);
+			// textEl.object3D.rotation.set(-90, 0, 0);
+
+			// markerEl.appendChild(textEl);
+		}
 	}
 });
 
